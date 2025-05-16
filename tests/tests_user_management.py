@@ -5,8 +5,14 @@ Pruebas unitarias para el sistema de gestión de usuarios
 
 import unittest
 import os
+import sys
 import json
 from datetime import datetime
+
+# Agregar el directorio raíz del proyecto al path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+# Ahora podemos importar los módulos del proyecto
 from src.models.user import User
 from src.services.user_service import UserService
 from src.utils.file_handler import write_json_file, read_json_file
@@ -82,16 +88,16 @@ class TestUserService(unittest.TestCase):
     def test_search_by_name(self):
         """Prueba la búsqueda de usuarios por nombre"""
         # Búsqueda exacta
-        results = self.service.search_by_name("User One")
+        results = self.service.search_users_by_name("User One")
         self.assertEqual(len(results), 1)
         self.assertEqual(results[0].name, "User One")
         
         # Búsqueda parcial
-        results = self.service.search_by_name("User")
+        results = self.service.search_users_by_name("User")
         self.assertEqual(len(results), 3)  # Debería encontrar los tres
         
         # Búsqueda inexistente
-        results = self.service.search_by_name("NonExistent")
+        results = self.service.search_users_by_name("NonExistent")
         self.assertEqual(len(results), 0)
     
     def test_delete_user(self):
