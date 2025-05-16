@@ -25,8 +25,8 @@ Pasos de instalación
 
 Clona este repositorio:
 
-bashgit clone https://github.com/romica44/user-management-system.git
-cd user-management-system
+bashgit clone https://github.com/romica44/user_manager_app.git
+cd user_manager_app
 
 Crea y activa un entorno virtual:
 
@@ -76,7 +76,7 @@ bash# Tras iniciar la aplicación:
 
 Estructura del proyecto
 
-user-management-system/
+user_manager_app/
 │
 ├── src/
 │   ├── config/
@@ -133,4 +133,4 @@ Licencia
 Este proyecto está licenciado bajo la Licencia MIT - vea el archivo LICENSE para más detalles.
 Contacto
 Tu Nombre - romica44@gmail.com
-Enlace del proyecto: https://github.com/romica44/user-management-system
+Enlace del proyecto: https://github.com/romica44/user_manager_app
